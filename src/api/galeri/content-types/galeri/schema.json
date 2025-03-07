@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galeris",
+  "info": {
+    "singularName": "galeri",
+    "pluralName": "galeris",
+    "displayName": "galeri"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
