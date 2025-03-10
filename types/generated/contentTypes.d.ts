@@ -432,6 +432,44 @@ export interface ApiGaleriGaleri extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStrukturStruktur extends Struct.CollectionTypeSchema {
+  collectionName: 'strukturs';
+  info: {
+    displayName: 'Struktur';
+    pluralName: 'strukturs';
+    singularName: 'struktur';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Schema.Attribute.Media<'images' | 'videos' | 'audios' | 'files'>;
+    cover_anggota: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gif_anggota: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::struktur.struktur'
+    > &
+      Schema.Attribute.Private;
+    nama_anggota: Schema.Attribute.String;
+    nama_divisi: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -943,6 +981,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::aktivitas-s.aktivitas-s': ApiAktivitasSAktivitasS;
       'api::galeri.galeri': ApiGaleriGaleri;
+      'api::struktur.struktur': ApiStrukturStruktur;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

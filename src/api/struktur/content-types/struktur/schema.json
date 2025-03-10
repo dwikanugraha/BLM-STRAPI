@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strukturs",
+  "info": {
+    "singularName": "struktur",
+    "pluralName": "strukturs",
+    "displayName": "Struktur"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "cover": {
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "nama_divisi": {
+      "type": "string"
+    },
+    "nama_anggota": {
+      "type": "string"
+    },
+    "cover_anggota": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "gif_anggota": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
